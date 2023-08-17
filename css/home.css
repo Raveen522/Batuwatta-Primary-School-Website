@@ -88,7 +88,7 @@
 }
  
 .slider-wrapper img.active {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 
@@ -130,8 +130,9 @@
 }
   
 .slider-dot {
-    width: 20px;
-    height: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
     border: white solid 1px;
     margin: 0 8px;
     cursor: pointer;
@@ -176,18 +177,21 @@
 }
 
 .home-title h1{
-    font-size: 150px;
-    margin: 0;
-    line-height: 130px;
+    font-size: 50px;
+    font-weight: normal;
     color: white;
 }
-.home-title h1:nth-child(1){
-    text-align: left;
-}
-.home-title h1:nth-child(2){
-    text-align: right;
+
+.top-news{
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.518);
 }
 
+.home-title .top-news h1{
+    margin: 0;
+    color: yellow;
+}
 
 @keyframes fade-in-title {
     from {
@@ -203,47 +207,6 @@
     }
     to {
         background: rgba(0, 0, 0, 0.772);
-    }
-}
-
-
-
-
-.home-title h1:nth-child(1)::after,.home-title h1:nth-child(2)::after{
-    content: '';
-    position: absolute;
-}
-
-.home-title h1:nth-child(1)::after{
-    border-bottom: 3px solid white;
-    left: -600px;
-    right: 1200px;
-    bottom: 198px;
-    animation: line-animation-left-right 0.4s 1.5s ease-out forwards;
-}
-.home-title h1:nth-child(2)::after{
-    border-bottom: 3px solid white;
-    left: 1200px;
-    right: -600px;
-    bottom: 65px;
-    animation: line-animation-right-left 0.4s 1.5s ease-out forwards;
-}
-
-
-@keyframes line-animation-right-left {
-    from {
-        left: 1200;
-    }
-    to {
-        left: 220px;
-    }
-}
-@keyframes line-animation-left-right {
-    from {
-        right: 1200px;
-    }
-    to {
-        right: 250px;
     }
 }
 
