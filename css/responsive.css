@@ -1,0 +1,473 @@
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+/* ----------------------------------------------- */
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+/* ----------------------------------------------- */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    /* ****** Navigation bar ****** */
+    .nav-bar ul{
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 62px;
+        right: -100%;
+        z-index: 1;
+        padding: 5px;
+        background: #01051ced;
+        text-align: center;
+        transition: all .3s;
+    }
+
+    .nav-bar ul li{
+        width: 30%;
+        display: block;
+        margin: 50px auto 0 auto;
+        line-height: 10px;
+    }
+    .nav-bar ul li a{
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    
+    .menu-btn{
+        display:flex;
+    }
+
+    /* ------------------------ */
+
+    /* ****** Footer ****** */
+
+    footer .footer-elements{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-elements .contact{
+        order: 2;
+        width: 80%;
+    }
+
+    footer .footer-elements .contact h2{
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer .footer-elements .contact ul li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+        text-align: center;
+    }
+    footer .footer-elements .contact ul li:first-child p{
+        padding: 0;
+    }
+    footer .footer-elements .contact ul li b{
+        display: none;
+    }
+
+    footer .footer-elements .contact ul li h3{
+        margin: 15px 0 0 0;
+    }
+
+    footer .footer-elements .contact ul li p{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    footer .footer-elements .logo-title{
+        order: 1;
+        width: 80%;
+        margin-top: 30px;
+    }
+    footer .footer-elements .social-link{
+        order: 3;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-elements .social-link h2{
+        width: 100%;
+        float: right;
+        margin-bottom: 0;
+        text-align: center;
+        border-bottom: white solid 3px;
+    }
+
+    footer .footer-elements .social-link .links{
+       padding-left: 0;
+    }
+    /* ------------------------ */
+
+
+    /* Home slider */
+    .home-title{
+            width: 300px;
+    }
+    
+    .col-mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1{
+        font-size: 30px;
+    }
+
+    /* ---------------- */
+
+
+
+    /* +++++++++Home page++++++++++++++ */
+    .home-title h1{
+        font-size: 70px;
+        line-height: 80px;
+        text-align: center;
+    }
+
+    .home-title h1:nth-child(1)::after{
+        right: 1200px;
+        bottom: 170px;
+        animation: line-animation-left-right-mobile 0.4s 1.5s ease-out forwards;
+    }
+    .home-title h1:nth-child(2)::after{
+        left: 1200px;
+        right: -600px;
+        bottom: 90px;
+        animation: line-animation-right-left-mobile 0.4s 1.5s ease-out forwards;
+    }
+
+    @keyframes line-animation-right-left-mobile {
+        from {
+            left: 1200;
+        }
+        to {
+            left: 100px;
+        }
+    }
+    @keyframes line-animation-left-right-mobile {
+        from {
+            right: 1200px;
+        }
+        to {
+            right: 100px;
+        }
+    }
+    
+    .slider-controls {
+        right: 10px; 
+    }
+    .we-are-description{
+        width: 90%;
+        padding: 0;
+    }
+    .we-are-description h1{
+        font-size: 40px;
+    }
+    .we-are-description h1::after{
+        right: 30%;
+        top: 85px;
+    }
+
+    .about-img{
+        width:100%;
+    }
+
+    .sections-services h1::after{
+        left: 10%;
+        top: 65px;
+    }
+
+    .section-latest-projects h1::after{
+        left: 10%;
+        right: 10%;
+        top: 70px;
+    }
+
+    .gallery-wrapper .gallery-item{
+        box-shadow: none;
+    }
+
+    .description{
+        bottom: 5px;
+    }
+
+    .section-testimonials .container{
+        width: 100%;
+    }
+
+    .section-testimonials h1::after{
+        right: 5%;
+        top: 70px;
+    }
+
+    .card-slider{
+        width: 100%;
+        height: 650px;
+    }
+
+    .card-slider .review-list{
+        margin: 0 auto 0 auto;
+    }
+
+    .card-slider .review-list .review-card{
+        width: 300px;
+        height: 550px;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .review-card h2{
+        margin: 0;
+        margin-top: 35px;
+    }
+
+    .review-card h2::after{
+        left: 10px;
+        right: 10px;
+        top: 85px;
+    }
+
+    .review-card p{
+        width: 78%;
+        margin-top: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #reviewer-img{
+        width: 120px;
+        height: 120px;
+        top: -450%;
+        left: 75px;
+    }
+
+    .reviewer-info{
+        position: absolute;
+        top: -280%;
+        left: 30px;
+        text-align: center;
+        margin: 0;
+    }
+    .review-card:nth-child(2) .reviewer-info{
+        left: 65px;
+    }
+    .review-card:nth-child(3) .reviewer-info{
+        left: 25px;
+    }
+
+    .reviewer-info h3{
+        margin: 0;
+        text-align: center;
+    }
+
+    .reviewer::after{
+        border-bottom: none;
+    }
+
+    .review-card .quot-66{
+        left: 10px;
+    }
+    
+    .review-card .quot-99{
+        right: 20px;
+        bottom: 50px;
+    }
+    /* +++++++++End of Home page++++++++++++++ */
+
+
+    /* +++++++++Service page++++++++++++++ */
+    .services-list .detailed-service-card{
+        width: 80%;
+        height: fit-content;
+        align-items: center;
+        text-align: center;
+    }
+
+    .services-list .row:nth-child(odd),.services-list .row:nth-child(even){
+        justify-content: center;
+    }
+
+    .services-list .detailed-service-card h2::after{
+        border-bottom: none;
+    }
+
+    .services-list .detailed-service-card img{
+        width: 120px;
+        margin-top: 20px;
+    }
+
+    .section-why-you-choose-us .container{
+        width: 90%;
+    }
+    .section-why-you-choose-us .section-title{
+        margin-bottom: 0;
+    }
+
+    #why-you-choose-us-description{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .reasons-list{
+        width: 70%;
+        text-align: left;
+    }
+    /* +++++++++End of Service page++++++++++++++ */
+
+
+    /* +++++++++About page++++++++++++++ */
+    .vacancy-description{
+        text-align: center;
+    }
+    .vacancy-description br{
+        display: none;
+    }
+    
+    .vacancy img {
+        width: 100%;
+    }
+
+    .vacancy-description a{
+        margin: auto;
+    }
+    .partner-list{
+        width: 100%;
+    }
+
+    .moregreat_trusted_img{
+        width: 100%;
+    }
+
+    /* +++++++++End of About page++++++++++++++ */
+
+    
+    /* +++++++++Project page++++++++++++++ */
+    .tab-controller{
+        width: 100%;
+    }
+    .tab-controller .tab-list{
+        width: 100%;
+        display: grid;
+    }
+
+    .tab-pages{
+        width: 100%;
+        height: 700px;
+    }
+
+    .tab-pages .gallery-wrapper{
+        margin: auto;
+        display: flex;
+    }
+
+    .section-request-project{
+        text-align: center;
+    }
+    .details-form-list{
+        width: 100%;
+    }
+    .details-form input,select,textarea{
+        width: 80%;
+    }
+    .details-form select option{
+        width: 50%;
+    }
+
+    .form-submited h1{
+        font-size: 20px;
+        margin: 0;
+    }
+    /* +++++++++End of Project page++++++++++++++ */
+
+
+    /* +++++++++Contact page++++++++++++++ */
+    .contact-card{
+        margin: 0 20px 30px 20px;
+    }
+
+    .location-map {
+        width: 100%;
+        margin-top: 30px;
+    }
+    /* +++++++++End of Contact page++++++++++++++ */
+
+    /* +++++++++Contact page++++++++++++++ */
+    .section-jop-application .container{
+        width: 100%;
+        margin: 0;
+    }
+    .section-jop-application p{
+        width: 95%;
+        text-align: center;
+    }
+
+    .application{
+        width: 95%;
+        border-radius: 12px;
+    }
+
+    .application form{
+        width: 98%;
+        margin: auto;
+    }
+    
+
+    .col-photo .photo-hint{
+        text-align: center;
+    }
+
+    .col-form{
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col-form input[type=text],.col-form input[type=email],.col-form textarea{
+        width: 90%;   
+    }
+
+    .radio-groups{
+        width: 90%;
+    }
+
+    .input-group{
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .input-group #first_name,#last_name{
+        width: 100%;
+    }
+    .university_details{
+        width: 100%;
+    }
+
+
+    /* +++++++++End of Contact page++++++++++++++ */
+
+
+}
+/* ----------------------------------------------- */
+

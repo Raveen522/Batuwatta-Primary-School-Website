@@ -1,0 +1,58 @@
+@keyframes fadeIn {
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes display-nav-bar {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 80px;
+    }
+}
+
+@keyframes display-logo {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes display-nav-list-item {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOpacity {
+    from{ 
+        opacity: 0.0; 
+    }
+    to{ 
+        opacity: 1; 
+    }
+}
+
+@keyframes fade-in-title {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
