@@ -41,6 +41,9 @@ p{
     font-weight: normal;
 }
 
+a{
+    text-decoration: none;
+}
 
 ::-webkit-scrollbar{
     width: 10px;
@@ -265,6 +268,10 @@ footer .developer p{
     font-size: 14px;
     text-align: center;
 }
+footer .developer p a{
+    font-weight: 600;
+    color: white;
+}
 
 footer .footer-elements .contact{
     width: 30%;
@@ -416,6 +423,12 @@ footer .footer-elements .social-link .links .youtube:hover{
 
 
 /* ------ Components ----- */
+
+section h1{
+    color: var(--primary-color);
+}
+
+
 
 button,input[type=submit],.button{
     width: fit-content;
