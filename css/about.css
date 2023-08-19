@@ -1,0 +1,29 @@
+.section-about-school{
+    margin-top: 80px;
+}
+
+.principal-notice .col{
+    margin-right: 50px;
+}
+.principal-notice img{
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.principal-notice{
+
+}
+
+.section-about-school .row{
+    width: 90%;
+    justify-content: space-around;
+    text-align: center;
+}
+.section-about-school .row h2{
+    font-size: 30px;
+    color: var(--primary-color);
+}
+.section-about-school .row .col{
+    width: 40%;
+}
