@@ -27,3 +27,20 @@
 .section-about-school .row .col{
     width: 40%;
 }
+
+.official-branding{
+    width: 100%;
+}
+.official-branding .row{
+    width: 100%;
+    align-items: center
+}
+.official-branding .row h2{
+    width: 300px;
+}
+.school-flag{
+    width: 300px;
+}
+.scholl-badge{
+    width: 200px;
+}
