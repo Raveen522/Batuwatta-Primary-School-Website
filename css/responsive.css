@@ -139,333 +139,58 @@
 
     /* +++++++++Home page++++++++++++++ */
     .home-title h1{
-        font-size: 70px;
-        line-height: 80px;
-        text-align: center;
+        font-size: 40px;
     }
 
-    .home-title h1:nth-child(1)::after{
-        right: 1200px;
-        bottom: 170px;
-        animation: line-animation-left-right-mobile 0.4s 1.5s ease-out forwards;
-    }
-    .home-title h1:nth-child(2)::after{
-        left: 1200px;
-        right: -600px;
-        bottom: 90px;
-        animation: line-animation-right-left-mobile 0.4s 1.5s ease-out forwards;
-    }
-
-    @keyframes line-animation-right-left-mobile {
-        from {
-            left: 1200;
-        }
-        to {
-            left: 100px;
-        }
-    }
-    @keyframes line-animation-left-right-mobile {
-        from {
-            right: 1200px;
-        }
-        to {
-            right: 100px;
-        }
-    }
-    
     .slider-controls {
         right: 10px; 
     }
-    .we-are-description{
-        width: 90%;
-        padding: 0;
-    }
-    .we-are-description h1{
-        font-size: 40px;
-    }
-    .we-are-description h1::after{
-        right: 30%;
-        top: 85px;
+    .top-news{
+        padding: 10px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.518);
     }
 
-    .about-img{
-        width:100%;
+    .home-title .top-news h1{
+       font-size: 30px;
     }
 
-    .sections-services h1::after{
-        left: 10%;
-        top: 65px;
-    }
-
-    .section-latest-projects h1::after{
-        left: 10%;
-        right: 10%;
+    .section-special-news h1::after{
         top: 70px;
     }
 
-    .gallery-wrapper .gallery-item{
-        box-shadow: none;
-    }
-
-    .description{
-        bottom: 5px;
-    }
-
-    .section-testimonials .container{
-        width: 100%;
-    }
-
-    .section-testimonials h1::after{
-        right: 5%;
+    .section-special-events h1::after{
         top: 70px;
     }
 
-    .card-slider{
-        width: 100%;
-        height: 650px;
-    }
-
-    .card-slider .review-list{
-        margin: 0 auto 0 auto;
-    }
-
-    .card-slider .review-list .review-card{
-        width: 300px;
-        height: 550px;
-        text-align: center;
-        justify-content: space-between;
-    }
-
-    .review-card h2{
-        margin: 0;
-        margin-top: 35px;
-    }
-
-    .review-card h2::after{
-        left: 10px;
-        right: 10px;
-        top: 85px;
-    }
-
-    .review-card p{
-        width: 78%;
-        margin-top: 60%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #reviewer-img{
-        width: 120px;
-        height: 120px;
-        top: -450%;
-        left: 75px;
-    }
-
-    .reviewer-info{
-        position: absolute;
-        top: -280%;
-        left: 30px;
-        text-align: center;
-        margin: 0;
-    }
-    .review-card:nth-child(2) .reviewer-info{
-        left: 65px;
-    }
-    .review-card:nth-child(3) .reviewer-info{
-        left: 25px;
-    }
-
-    .reviewer-info h3{
-        margin: 0;
-        text-align: center;
-    }
-
-    .reviewer::after{
-        border-bottom: none;
-    }
-
-    .review-card .quot-66{
-        left: 10px;
-    }
-    
-    .review-card .quot-99{
-        right: 20px;
-        bottom: 50px;
+    .section-achievements h1::after{
+        top: 70px;
     }
     /* +++++++++End of Home page++++++++++++++ */
 
 
-    /* +++++++++Service page++++++++++++++ */
-    .services-list .detailed-service-card{
-        width: 80%;
-        height: fit-content;
-        align-items: center;
-        text-align: center;
-    }
-
-    .services-list .row:nth-child(odd),.services-list .row:nth-child(even){
-        justify-content: center;
-    }
-
-    .services-list .detailed-service-card h2::after{
-        border-bottom: none;
-    }
-
-    .services-list .detailed-service-card img{
-        width: 120px;
-        margin-top: 20px;
-    }
-
-    .section-why-you-choose-us .container{
-        width: 90%;
-    }
-    .section-why-you-choose-us .section-title{
-        margin-bottom: 0;
-    }
-
-    #why-you-choose-us-description{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .reasons-list{
-        width: 70%;
-        text-align: left;
-    }
-    /* +++++++++End of Service page++++++++++++++ */
-
-
     /* +++++++++About page++++++++++++++ */
-    .vacancy-description{
+    .section-about-school h1{
         text-align: center;
     }
-    .vacancy-description br{
-        display: none;
+
+    .principal-notice .col{
+        width: 90%;
+        margin-right: 0;
     }
-    
-    .vacancy img {
-        width: 100%;
+    .principal-notice .col h3{
+        width: 200px;
     }
 
-    .vacancy-description a{
-        margin: auto;
+    .section-about-school .row .col{
+        width: 60%;
     }
-    .partner-list{
-        width: 100%;
-    }
-
-    .moregreat_trusted_img{
-        width: 100%;
-    }
-
     /* +++++++++End of About page++++++++++++++ */
 
     
-    /* +++++++++Project page++++++++++++++ */
-    .tab-controller{
-        width: 100%;
-    }
-    .tab-controller .tab-list{
-        width: 100%;
-        display: grid;
-    }
+    /* +++++++++News page++++++++++++++ */
 
-    .tab-pages{
-        width: 100%;
-        height: 700px;
-    }
-
-    .tab-pages .gallery-wrapper{
-        margin: auto;
-        display: flex;
-    }
-
-    .section-request-project{
-        text-align: center;
-    }
-    .details-form-list{
-        width: 100%;
-    }
-    .details-form input,select,textarea{
-        width: 80%;
-    }
-    .details-form select option{
-        width: 50%;
-    }
-
-    .form-submited h1{
-        font-size: 20px;
-        margin: 0;
-    }
-    /* +++++++++End of Project page++++++++++++++ */
-
-
-    /* +++++++++Contact page++++++++++++++ */
-    .contact-card{
-        margin: 0 20px 30px 20px;
-    }
-
-    .location-map {
-        width: 100%;
-        margin-top: 30px;
-    }
-    /* +++++++++End of Contact page++++++++++++++ */
-
-    /* +++++++++Contact page++++++++++++++ */
-    .section-jop-application .container{
-        width: 100%;
-        margin: 0;
-    }
-    .section-jop-application p{
-        width: 95%;
-        text-align: center;
-    }
-
-    .application{
-        width: 95%;
-        border-radius: 12px;
-    }
-
-    .application form{
-        width: 98%;
-        margin: auto;
-    }
-    
-
-    .col-photo .photo-hint{
-        text-align: center;
-    }
-
-    .col-form{
-        width: 100%;
-        padding: 0;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .col-form input[type=text],.col-form input[type=email],.col-form textarea{
-        width: 90%;   
-    }
-
-    .radio-groups{
-        width: 90%;
-    }
-
-    .input-group{
-        width: 90%;
-        flex-direction: column;
-    }
-
-    .input-group #first_name,#last_name{
-        width: 100%;
-    }
-    .university_details{
-        width: 100%;
-    }
-
-
-    /* +++++++++End of Contact page++++++++++++++ */
+    /* +++++++++End of News page++++++++++++++ */
 
 
 }

@@ -165,7 +165,7 @@
 }
 
 .home-title{
-    width: 620px;
+    width: 60%;
     height: fit-content;
     position: relative;
     display: flex;
@@ -177,8 +177,7 @@
 }
 
 .home-title h1{
-    font-size: 50px;
-    font-weight: normal;
+    font-size: 70px;
     color: white;
 }
 
@@ -226,6 +225,9 @@ section{
     left: 30%;
     right: 30%;
     top: 110px;
+}
+.news-list{
+    width: 100%;
 }
 .news-card{
     width: 250px;
