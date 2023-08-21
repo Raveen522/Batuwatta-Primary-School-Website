@@ -171,7 +171,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.612);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.801);
     opacity: 0; 
     animation: fade-in-title 1s 1s ease-out forwards; 
 }

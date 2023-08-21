@@ -48,3 +48,13 @@
     margin-left: 25px;
     margin-right: 10px;
 }
+.latest-news-card h2{
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.latest-news-card hr{
+    width: 50%;
+    margin: 0;
+    border: rgb(0, 0, 160) 1.5px solid;
+}
