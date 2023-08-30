@@ -331,6 +331,7 @@ footer .footer-elements .social-link{
     height: 70%;
     margin-top: 30px;
     text-align: right;
+    align-items: flex-end
 }
 footer .footer-elements .social-link h2{
     width: 60%;
