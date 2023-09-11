@@ -61,6 +61,10 @@
         margin-top: 40px;
     }
 
+    .slider-controls {
+        bottom: 0px;
+        left: 55px;
+    }
     /* ------------------------ */
 
     /* ****** Footer ****** */
