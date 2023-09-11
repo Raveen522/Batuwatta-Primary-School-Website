@@ -178,6 +178,7 @@
 
 .home-title h1{
     font-size: 70px;
+    line-height: 75px;
     color: white;
 }
 
@@ -292,12 +293,13 @@ section{
     top: 110px;
 }
 .achievements-item{
-    width: 250px;
-    height: 250px;
+    width: 255px;
+    height: 260px;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--shadow-color);
     transition: all 0.2s ease-in-out;
+    text-align: center;
 }
 
 .achievements-item:hover{
@@ -309,4 +311,11 @@ section{
     height: 150px;
     border-radius: 8px;
     object-fit: cover;
+}
+
+.achievements-item h2{
+    margin: 8px 0 0 0;
+}
+.achievements-item p{
+    margin: 0;
 }
