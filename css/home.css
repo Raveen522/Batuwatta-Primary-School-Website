@@ -294,8 +294,10 @@ section{
 }
 .achievements-item{
     width: 255px;
-    height: 260px;
+    height: fit-content;
     margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--shadow-color);
     transition: all 0.2s ease-in-out;

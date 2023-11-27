@@ -11,6 +11,10 @@
     border-radius: 12px;
     object-fit: cover;
 }
+.principal-notice p{   
+    width: 80%;
+    text-align: justify;
+}
 
 .section-about-school .row{
     width: 90%;
