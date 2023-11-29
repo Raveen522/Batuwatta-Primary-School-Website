@@ -60,6 +60,9 @@ a{
     background-color: var(--ternary-color);
 }
 
+
+
+
 /* ****** Navigation bar ****** */
 .nav-bar{
     z-index: 999;
@@ -446,7 +449,47 @@ button:hover{
     background: white ;
     color: var(--primary-color);
     transform: scale(1.01);
+    cursor: pointer;
 }
+
+
+input[type=text],input[type=email],input[type=password],select{
+    width: 90%;
+    height: 30px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: var(--primary-color) solid 2px;
+    color: var(--primary-color);
+    font-size: 18px;
+    outline: none;
+}
+
+textarea{
+    width: 80%;
+    height: 80px;
+    background: transparent;
+    border: none;
+    border-bottom: var(--primary-color) solid 2px;
+    color: var(--primary-color);
+    font-family: "Manrope",sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type=text]::placeholder,input[type=email]::placeholder,input[type=password]::placeholder,textarea::placeholder{
+    font-family: "Manrope",sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all 0.15s ease;
+}
+
+input[type=text]:focus::placeholder,input[type=email]:focus::placeholder,input[type=password]:focus::placeholder,textarea:focus::placeholder{
+    font-size: 12px;
+}
+
+
 
 
 /* ------ ********** ----- */

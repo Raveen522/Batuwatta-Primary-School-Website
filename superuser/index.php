@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Admin Login</title>
-    <link rel="icon" type="image/x-icon" href="./assets/images/icons/moregreat_logo_white.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/icons/logo.png">
     <link rel="stylesheet" href="../css/style.css">
 
     <style>
@@ -35,10 +35,9 @@
     </style>
 </head>
 <body>
-    <img src="../assets/images/blueprints/blueprint_04.svg" alt="" class="blueprint">
     <div class="container col">
-        <img src="../assets/images/icons/MoreGreat-logo.png" alt="" class="logo">
-        <h1 class="page-title">MoreGreat</h1>
+        <img src="../assets/images/icons/logo.png" alt="" class="logo">
+        <h1 class="page-title">බටුවත්ත ප්‍රාථමික විද්‍යාලය</h1>
         <h2>Content Management System</h2>
         <form onsubmit="return false">
             <h2>Login</h2>

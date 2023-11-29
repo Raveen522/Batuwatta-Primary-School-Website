@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    
+    <title>Batuwatta Primary School</title>
+    <link rel='icon' type='image/x-icon' href='../assets/images/icons/logo.png'>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel='stylesheet' href='../css/animations.css'>
+    <link rel='stylesheet' href='../css/home.css'>
+    <link rel='stylesheet' href='../css/responsive.css'>
+
+    <style>
+        hr{
+            margin: 0;
+        }
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            margin: 100px 20px 0px 20px;
+
+        }
+        
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            border-radius: 0;
+            color: black;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #0099ff;
+            color: white;
+        }
+        
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #2d68f1;
+            color: white;
+        }
+        
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            margin: 0px 20px 0px 20px;
+        }
+
+        .tabcontent {
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+        }
+        
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .input-file {
+            width: 0.1px;
+            height: 0.1px;
+            
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .input-file-label{
+            padding: 5px 15px 5px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            background: #2d68f1;
+            box-shadow: 0 1px 5px var(--shadow-color);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .input-file-label:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body onload="load_news()">
+
+        <!-- --------- Navigation bar --------- -->
+        <div class="nav-bar">
+        
+            <div class="logo row">
+                <a href="#">
+                    <img class="logo" src="../assets/images/icons/logo.png">
+                </a>
+                <p>බටුවත්ත ප්‍රාථමික විද්‍යාලය - Content Management System</p>
+            </div>
+            
+            <ul>
+                <li><a href="../index.html" target="_blank">Home</a></li>
+                <li><a href="../about.html" target="_blank">About</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1yVyBoLf9xa8T9fjSCx1aiw_CJVjHWmbZ?usp=sharing" target="_blank">Downloads</a></li>
+                <!-- <li><a href="./news.html">News</a></li> -->
+            </ul>
+    
+            <div class="menu-btn">
+                <div class="menu-btn_burger"></div>
+            </div>
+    
+    
+        </div>
+        <!-- --------- End of Navigation bar --------- -->
+
+
+
+    <!-- Tab links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'News')" id="defaultOpen">News</button>
+        <button class="tablinks" onclick="openCity(event, 'Gallery')">Gallery</button>
+        <button class="tablinks" onclick="openCity(event, 'Achievements')">Achievements</button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="News" class="tabcontent">
+        <h3>News</h3> 
+        <hr>
+            <div class="container col">
+
+                <div class="news-list row col-mobile" id="news_list">
+                    <!-- <div class="news-card col" id="news_card_1">
+
+                        <img src="../assets/images/news/news_1.JPG" alt="" class="news-img" id="news_img_1">
+
+                        <input type="file" name="news_img_1_upload" id="news_img_1_upload" class="input-file" required>
+                        <label for="news_img_1_upload" class="input-file-label">Choose a image</label>
+
+
+                        <input type="text" name="news-title" id="news_title_1" placeholder="News Title" value="">
+
+                        <textarea name="news-description" id="news_description_1" cols="20" rows="3" placeholder="News description"></textarea>
+                        
+                        <div class="row">
+                            <input type="checkbox" name="news-card-visibility" id="news_card_visibility_1"> <label for="news-card-visibility">Show</label>
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+        <button id="btn_news_save">Save Changes</button>
+    </div>
+    
+    <div id="Gallery" class="tabcontent">
+        <h3>Gallery</h3> 
+        <hr>
+            <div class="container col">
+
+                <div class="event-gallery row" id="event_gallery_list">
+                    <div class="event-gallery-item" id="event_gallery_item_01">
+                        <img src="../assets/images/events/event_1.JPG" alt="" id="event_gallery_item_img_1">
+
+                        <div class="row">
+                            <input type="checkbox" name="event-gallery-item-visibility" id="event_gallery_item_img_1"> <label for="event-gallery-item-visibility">Show</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <button id="btn_event_gallery_save">Save Changes</button>
+    </div>
+    
+    <div id="Achievements" class="tabcontent">
+        <h3>Achievements</h3> 
+        <hr>
+
+            <div class="container col">
+                <div class="achievements-list row" id="achievements_list">
+
+                    <div class="achievements-item col" id="achievements_item_1">
+                        <img src="../assets/images/achievements/achievements_1.JPG" alt="" id="achievements_item_img_1">
+
+                        <input type="text" name="achievements-title" id="achievements_item_title_1" placeholder="Achievement Title">
+
+                        <textarea name="achievements-description" id="achievements_description_1" cols="20" rows="3" placeholder="Achievement description"></textarea>
+                        
+                        <div class="row">
+                            <input type="checkbox" name="achievements-item-visibility" id="achievements_item_visibility_1"> <label for="achievements-item-visibility">Show</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <button id="btn_achievements_save">Save Changes</button>
+        
+    </div>
+
+
+    <script>
+        document.getElementById("defaultOpen").click();
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+
+
+        function loaddata(){
+
+        }
+
+        function load_news(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("news_list").innerHTML=this.responseText;
+                }
+            };
+
+            xmlhttp.open("POST", "../php/load_news.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send();
+        }
+
+
+        //****************************
+        const news_img_input_1 = document.querySelector('#news_img_1_upload');
+        const news_img_preview_1 = document.querySelector('#news_img_1');
+
+        news_img_input_1.addEventListener('change', () => {
+        const file = news_img_input_1.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            news_img_preview_1.setAttribute('src', reader.result);
+        });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+        });
+        //************************
+        //****************************
+        const news_img_input_2 = document.querySelector('#news_img_2_upload');
+        const news_img_preview_2 = document.querySelector('#news_img_2');
+
+        news_img_input_2.addEventListener('change', () => {
+        const file = news_img_input_2.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            news_img_preview_2.setAttribute('src', reader.result);
+        });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+        });
+        //************************
+        //****************************
+        const news_img_input_3 = document.querySelector('#news_img_3_upload');
+        const news_img_preview_3 = document.querySelector('#news_img_3');
+
+        news_img_input_3.addEventListener('change', () => {
+        const file = news_img_input_3.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            news_img_preview_3.setAttribute('src', reader.result);
+        });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+        });
+        //************************
+        //****************************
+        const news_img_input_4 = document.querySelector('#news_img_4_upload');
+        const news_img_preview_4 = document.querySelector('#news_img_4');
+
+        news_img_input_4.addEventListener('change', () => {
+        const file = news_img_input_4.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            news_img_preview_4.setAttribute('src', reader.result);
+        });
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+        });
+        //************************
+
+    </script>
+
+</body>
+</html>
