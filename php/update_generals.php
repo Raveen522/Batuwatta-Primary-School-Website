@@ -12,6 +12,8 @@
         $hero_button_visibility = 0;
         $hero_button_link_visibility = 0;
 
+        $button_link = "<a href=".$hero_button_link."><button>".$hero_button."</button></a>";
+
         if(isset($_POST['hero_title_visibility'])){
             $hero_title_visibility = 1;
         }else{
@@ -27,18 +29,14 @@
         }else{
             $hero_button_visibility = 0;
         }
-        if(isset($_POST['hero_button_link_visibility'])){
-            $hero_button_link_visibility = 1;
-        }else{
-            $hero_button_link_visibility = 0;
-        }
+
     }
   
     $sql_query="UPDATE general_contents 
             SET 
-            caption='$hero_title'  ,
-            visibility='$hero_title_visibility'
-            
+            caption = '$hero_title'  ,
+            visibility = '$hero_title_visibility',
+            html_tag = '<h1>$hero_title</h1>'
             WHERE content_ID = 104101 ";
             
     if ($conn->query($sql_query)==TRUE) {
@@ -48,9 +46,9 @@
 
     $sql_query="UPDATE general_contents 
             SET 
-            caption='$hero_paragraph'  ,
-            visibility='$hero_paragraph_visibility'
-            
+            caption = '$hero_paragraph'  ,
+            visibility = '$hero_paragraph_visibility',
+            html_tag = '<p>$hero_paragraph<p/>'
             WHERE content_ID = 104112 ";
             
     if ($conn->query($sql_query)==TRUE) {
@@ -60,9 +58,9 @@
 
     $sql_query="UPDATE general_contents 
             SET 
-            caption='$hero_button'  ,
-            visibility='$hero_button_visibility'
-            
+            caption = '$hero_button'  ,
+            visibility ='$hero_button_visibility',
+            html_tag = '$button_link'
             WHERE content_ID = 104220 ";
             
     if ($conn->query($sql_query)==TRUE) {
@@ -72,9 +70,9 @@
 
     $sql_query="UPDATE general_contents 
             SET 
-            caption='$hero_button_link'  ,
-            visibility='$hero_button_link_visibility'
-            
+            caption = '$hero_button_link'  ,
+            visibility = '$hero_button_link_visibility',
+            html_tag = '0'
             WHERE content_ID = 104310 ";
             
     if ($conn->query($sql_query)==TRUE) {
