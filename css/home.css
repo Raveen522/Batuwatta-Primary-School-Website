@@ -269,6 +269,7 @@ section{
     top: 110px;
 }
 .event-gallery-item{
+    width: 360px;
     margin: 5px;
     box-shadow: 0 0 10px var(--shadow-color);
     transition: all 0.2s ease-in-out;

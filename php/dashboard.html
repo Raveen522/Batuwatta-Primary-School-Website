@@ -11,97 +11,10 @@
     <link rel='stylesheet' href='../css/animations.css'>
     <link rel='stylesheet' href='../css/home.css'>
     <link rel='stylesheet' href='../css/responsive.css'>
+    <link rel='stylesheet' href='../css/dashboard.css'>
 
-    <style>
-        hr{
-            margin: 0;
-        }
-        /* Style the tab */
-        .tab {
-            overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
-            margin: 100px 20px 0px 20px;
-
-        }
-        
-        /* Style the buttons that are used to open the tab content */
-        .tab button {
-            background-color: inherit;
-            float: left;
-            border: none;
-            border-radius: 0;
-            color: black;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 16px;
-            transition: 0.3s;
-        }
-        
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-            background-color: #0099ff;
-            color: white;
-        }
-        
-        /* Create an active/current tablink class */
-        .tab button.active {
-            background-color: #2d68f1;
-            color: white;
-        }
-        
-        /* Style the tab content */
-        .tabcontent {
-            display: none;
-            padding: 6px 12px;
-            border: 1px solid #ccc;
-            border-top: none;
-            margin: 0px 20px 0px 20px;
-        }
-
-        .tabcontent {
-            animation: fadeEffect 1s; /* Fading effect takes 1 second */
-        }
-        
-        /* Go from zero to full opacity */
-        @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        .input-file {
-            width: 0.1px;
-            height: 0.1px;
-            
-            opacity: 0;
-            overflow: hidden;
-            position: absolute;
-            z-index: -1;
-        }
-
-        .input-file-label{
-            padding: 5px 15px 5px 15px;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 10px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            color: white;
-            background: #2d68f1;
-            box-shadow: 0 1px 5px var(--shadow-color);
-            transition: all 0.2s ease-in-out;
-        }
-
-        .input-file-label:hover {
-            transform: scale(1.03);
-        }
-    </style>
 </head>
-<body onload="load_news()">
+<body onload="loaddata()">
 
         <!-- --------- Navigation bar --------- -->
         <div class="nav-bar">
@@ -132,80 +45,222 @@
 
     <!-- Tab links -->
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'News')" id="defaultOpen">News</button>
+        <button class="tablinks" onclick="openCity(event, 'General')" id="defaultOpen">General</button>
+        <button class="tablinks" onclick="openCity(event, 'News')" >News</button>
         <button class="tablinks" onclick="openCity(event, 'Gallery')">Gallery</button>
         <button class="tablinks" onclick="openCity(event, 'Achievements')">Achievements</button>
     </div>
     
     <!-- Tab content -->
+
+    <div id="General" class="tabcontent">
+        <div style="width: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;">
+            
+            <h3>General</h3> 
+            <button id="btn_general_save" onclick="save_generals()">Save Changes</button>
+        </div>
+        
+        <hr>
+            <div class="container col">
+                <div class="general_settings" id="general_settings" style="width: 90%; ">
+                    <form id = "frm_general" onsubmit="return false" enctype="multipart/form-data">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Content Name</th>
+                                    <th>Content</th>
+                                    <th>Visibility</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="tb_content" id="tb_content">
+                                <!-- <tr>
+                                    <td>
+                                        <label for="hero_title">Hero Title :</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="hero_title" id="hero_title"> 
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <input type="checkbox" name="hero_title_visibility" id="hero_title_visibility">
+                                            <label for="hero_title_visibility">Show</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <label for="hero_paragraph">Hero Paragraph :</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="hero_paragraph" id="hero_paragraph">
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <input type="checkbox" name="hero_paragraph_visibility" id="hero_paragraph_visibility">
+                                            <label for="hero_paragraph_visibility">Show</label>
+                                        </div>
+                                    </td>
+                                </tr>
+    
+                                <tr>
+                                    <td>
+                                        <label for="hero_button_txt">Hero Button Text :</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="hero_button_txt" id="hero_button_txt">
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <input type="checkbox" name="hero_button_visibility" id="hero_button_visibility">
+                                            <label for="hero_button_visibility">Show</label>
+                                        </div>
+                                    </td>
+                                </tr>
+    
+                                <tr>
+                                    <td>
+                                        <label for="hero_button_link">Hero Button Link :</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="hero_button_link" id="hero_button_link">
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        
+    </div>
+
+
     <div id="News" class="tabcontent">
-        <h3>News</h3> 
+        <div style="width: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;">
+            
+            <h3>News</h3> 
+            <button id="btn_news_save" onclick="save_news()">Save Changes</button>
+        </div>
+        
         <hr>
             <div class="container col">
 
                 <div class="news-list row col-mobile" id="news_list">
                     <!-- <div class="news-card col" id="news_card_1">
+                        <form id = "frm_news_card_1" onsubmit="return false" enctype="multipart/form-data">
 
-                        <img src="../assets/images/news/news_1.JPG" alt="" class="news-img" id="news_img_1">
+                            <input type="text" name="news_card_ID" id="news_card_ID" value="1"  >
 
-                        <input type="file" name="news_img_1_upload" id="news_img_1_upload" class="input-file" required>
-                        <label for="news_img_1_upload" class="input-file-label">Choose a image</label>
+                            <img src="../assets/images/news/news_1.JPG" alt="" class="news-img" id="news_img_1">
 
-
-                        <input type="text" name="news-title" id="news_title_1" placeholder="News Title" value="">
-
-                        <textarea name="news-description" id="news_description_1" cols="20" rows="3" placeholder="News description"></textarea>
-                        
-                        <div class="row">
-                            <input type="checkbox" name="news-card-visibility" id="news_card_visibility_1"> <label for="news-card-visibility">Show</label>
-                        </div>
-
+                            <input type="file" name="news_img_1_upload" id="news_img_1_upload" accept="image/*" class="input-file" onchange="document.getElementById('news_img_1').src = window.URL.createObjectURL(this.files[0])">
+                            <label for="news_img_1_upload" class="input-file-label">Choose a image</label>
+    
+    
+                            <input type="text" name="news_title" id="news_title" placeholder="News Title" value="">
+    
+                            <textarea name="news_description" id="news_description" cols="20" rows="3" placeholder="News description"></textarea>
+                            
+                            <div class="row">
+                                <input type="checkbox" name="news_card_visibility" id="news_card_visibility"> <label for="news_card_visibility">Show</label>
+                            </div>
+                        </form>
                     </div> -->
                 </div>
             </div>
-        <button id="btn_news_save">Save Changes</button>
+        
     </div>
     
     <div id="Gallery" class="tabcontent">
-        <h3>Gallery</h3> 
+        <div style="width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;">
+
+            <h3>Gallery</h3> 
+            <button id="btn_event_gallery_save" onclick="save_events()">Save Changes</button>
+        </div>
+        
         <hr>
             <div class="container col">
 
                 <div class="event-gallery row" id="event_gallery_list">
-                    <div class="event-gallery-item" id="event_gallery_item_01">
-                        <img src="../assets/images/events/event_1.JPG" alt="" id="event_gallery_item_img_1">
+                    <!-- <div class="event-gallery-item" id="event_gallery_item_01">
+                        <form id = "frm_event_item_1" onsubmit="return false" enctype="multipart/form-data">
+                            <input type="text" name="event_gallery_item_ID" id="event_gallery_item_ID" value="1">
 
-                        <div class="row">
-                            <input type="checkbox" name="event-gallery-item-visibility" id="event_gallery_item_img_1"> <label for="event-gallery-item-visibility">Show</label>
-                        </div>
-                    </div>
+                            <img src="../assets/images/events/event_01.JPG" alt="" id="event_img_1">
+    
+                            <input type="file" name="event_img_1_upload" id="event_img_1_upload" accept="image/*" class="input-file" onchange="document.getElementById('event_item_img_1').src = window.URL.createObjectURL(this.files[0])">
+                            <label for="event_img_1_upload" class="input-file-label">Choose a image</label>
+    
+                            <div class="row">
+                                <input type="checkbox" name="event_img_visibility" id="event_img_visibility"> <label for="event_img_visibility">Show</label>
+                            </div>
+                        </form>
+                    </div> -->
                 </div>
             </div>
-        <button id="btn_event_gallery_save">Save Changes</button>
+
     </div>
     
     <div id="Achievements" class="tabcontent">
-        <h3>Achievements</h3> 
+        <div style="width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;">
+
+            <h3>Achievements</h3> 
+            <button id="btn_achievements_save" onclick="save_achievements()">Save Changes</button>
+        </div>
+        
         <hr>
 
             <div class="container col">
                 <div class="achievements-list row" id="achievements_list">
 
-                    <div class="achievements-item col" id="achievements_item_1">
-                        <img src="../assets/images/achievements/achievements_1.JPG" alt="" id="achievements_item_img_1">
+                    <!-- <div class="achievements-item col" id="achievements_item_1">
+                        <form id = "frm_achievements_card_1" onsubmit="return false" enctype="multipart/form-data">
+                            
+                            <input type="text" name="achievements_card_ID" id="achievements_card_ID" value="1">
 
-                        <input type="text" name="achievements-title" id="achievements_item_title_1" placeholder="Achievement Title">
+                            <img src="../assets/images/achievements/achievements_1.JPG" alt="" id="achievements_item_img_1">
 
-                        <textarea name="achievements-description" id="achievements_description_1" cols="20" rows="3" placeholder="Achievement description"></textarea>
-                        
-                        <div class="row">
-                            <input type="checkbox" name="achievements-item-visibility" id="achievements_item_visibility_1"> <label for="achievements-item-visibility">Show</label>
-                        </div>
-                    </div>
+                            <input type="file" name="achievements_img_1_upload" id="achievements_img_1_upload" accept="image/*" class="input-file" onchange="document.getElementById('achievements_item_img_1').src = window.URL.createObjectURL(this.files[0])">
+                            <label for="achievements_img_1_upload" class="input-file-label">Choose a image</label>
+
+
+                            <input type="text" name="achievements-title" id="achievements_item_title" placeholder="Achievement Title">
+    
+                            <textarea name="achievements-description" id="achievements_description" cols="20" rows="3" placeholder="Achievement description"></textarea>
+                            
+                            <div class="row">
+                                <input type="checkbox" name="achievements_item_visibility" id="achievements_item_visibility"> <label for="achievements_item_visibility">Show</label>
+                            </div>
+                        </form>
+                    </div> -->
 
                 </div>
             </div>
-        <button id="btn_achievements_save">Save Changes</button>
+
         
     </div>
 
@@ -235,7 +290,42 @@
 
 
         function loaddata(){
+            load_generals();
             load_news();
+            load_achievements();
+            load_events();
+        }
+
+        function load_generals(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("tb_content").innerHTML=this.responseText;
+                }
+            };
+
+            xmlhttp.open("POST", "../php/load_generals.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send();
+        }
+        function save_generals(){
+
+                var general_form = document.getElementById('frm_general');
+                var general_formData = new FormData(general_form);
+                    
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('POST', '../php/update_generals.php', true);
+                xmlhttp.onload = function() {
+                    if (this.status === 200) {
+                        // alert(this.responseText);
+                        document.getElementById("tb_content").innerHTML=this.responseText;
+                    }else{
+                        // console.log(this.responseText);
+                        document.getElementById("tb_content").innerHTML=this.responseText;
+                    }
+                };
+                xmlhttp.send(general_formData);
+
         }
 
         function load_news(){
@@ -250,79 +340,92 @@
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlhttp.send();
         }
-
-
-        //***********  news_img_1_uploading  **************
-        const news_img_input_1 = document.querySelector('#news_img_1_upload');
-        const news_img_preview_1 = document.querySelector('#news_img_1');
-
-        news_img_input_1.addEventListener('change', () => {
-        const file = news_img_input_1.files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-            news_img_preview_1.setAttribute('src', reader.result);
-        });
-
-        if (file) {
-            reader.readAsDataURL(file);
+        function save_news(){
+            for (let news_ID = 1; news_ID < 5; news_ID++) {
+                var news_form = document.getElementById('frm_news_card_'+news_ID);
+                var news_formData = new FormData(news_form);
+                    
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('POST', '../php/update_news.php', true);
+                xmlhttp.onload = function() {
+                    if (this.status === 200) {
+                        // alert(this.responseText);
+                        document.getElementById("news_list").innerHTML=this.responseText;
+                    }else{
+                        // console.log(this.responseText);
+                        document.getElementById("news_list").innerHTML=this.responseText;
+                    }
+                };
+                xmlhttp.send(news_formData);
+            }
         }
-        });
-        //************************
 
-        //***********  news_img_2_uploading  **************
-        const news_img_input_2 = document.querySelector('#news_img_2_upload');
-        const news_img_preview_2 = document.querySelector('#news_img_2');
+        function load_achievements(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("achievements_list").innerHTML=this.responseText;
+                }
+            };
 
-        news_img_input_2.addEventListener('change', () => {
-        const file = news_img_input_2.files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-            news_img_preview_2.setAttribute('src', reader.result);
-        });
-
-        if (file) {
-            reader.readAsDataURL(file);
+            xmlhttp.open("POST", "../php/load_achievements.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send();
         }
-        });
-        //************************
-
-        //***********  news_img_3_uploading  **************
-        const news_img_input_3 = document.querySelector('#news_img_3_upload');
-        const news_img_preview_3 = document.querySelector('#news_img_3');
-
-        news_img_input_3.addEventListener('change', () => {
-        const file = news_img_input_3.files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-            news_img_preview_3.setAttribute('src', reader.result);
-        });
-
-        if (file) {
-            reader.readAsDataURL(file);
+        function save_achievements(){
+            for (let achievements_ID = 1; achievements_ID < 5; achievements_ID++) {
+                var achievements_form = document.getElementById('frm_achievements_card_'+achievements_ID);
+                var achievements_formData = new FormData(achievements_form);
+                    
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('POST', '../php/update_achievements.php', true);
+                xmlhttp.onload = function() {
+                    if (this.status === 200) {
+                        // alert(this.responseText);
+                        document.getElementById("achievements_list").innerHTML=this.responseText;
+                    }else{
+                        // console.log(this.responseText);
+                        document.getElementById("achievements_list").innerHTML=this.responseText;
+                    }
+                };
+                xmlhttp.send(achievements_formData);
+            }
         }
-        });
-        //************************
 
-        //***********  news_img_4_uploading  **************
-        const news_img_input_4 = document.querySelector('#news_img_4_upload');
-        const news_img_preview_4 = document.querySelector('#news_img_4');
+        function load_events(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("event_gallery_list").innerHTML=this.responseText;
+                }
+            };
 
-        news_img_input_4.addEventListener('change', () => {
-        const file = news_img_input_4.files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-            news_img_preview_4.setAttribute('src', reader.result);
-        });
-
-        if (file) {
-            reader.readAsDataURL(file);
+            xmlhttp.open("POST", "../php/load_events.php", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send();
         }
-        });
-        //************************
+        function save_events(){
+            for (let events_ID = 1; events_ID < 2; events_ID++) {
+                var events_form = document.getElementById('frm_event_item_'+events_ID);
+                var events_formData = new FormData(events_form);
+                    
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open('POST', '../php/update_events.php', true);
+                xmlhttp.onload = function() {
+                    if (this.status === 200) {
+                        // alert(this.responseText);
+                        document.getElementById("event_gallery_list").innerHTML=this.responseText;
+                    }else{
+                        // console.log(this.responseText);
+                        document.getElementById("event_gallery_list").innerHTML=this.responseText;
+                    }
+                };
+                xmlhttp.send(events_formData);
+            }
+            }
+
+
+
 
     </script>
 

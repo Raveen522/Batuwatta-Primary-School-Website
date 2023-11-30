@@ -460,7 +460,7 @@ input[type=text],input[type=email],input[type=password],select{
     background: transparent;
     border: none;
     border-bottom: var(--primary-color) solid 2px;
-    color: var(--primary-color);
+    color: black;
     font-size: 18px;
     outline: none;
 }
@@ -471,7 +471,7 @@ textarea{
     background: transparent;
     border: none;
     border-bottom: var(--primary-color) solid 2px;
-    color: var(--primary-color);
+    color: Black;
     font-family: "Manrope",sans-serif;
     font-size: 15px;
     outline: none;
@@ -481,7 +481,7 @@ input[type=text]::placeholder,input[type=email]::placeholder,input[type=password
     font-family: "Manrope",sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: black;
     transition: all 0.15s ease;
 }
 
