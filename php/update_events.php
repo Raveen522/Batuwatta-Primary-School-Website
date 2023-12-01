@@ -1,13 +1,29 @@
 <?php
     require 'connection.php';
 
+    $event_img_upload_name;
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $event_ID = $_POST['event_gallery_item_ID'];
 
+        $sqlQuery = "SELECT img FROM gallery_list WHERE gallery_ID = $event_ID";
+    
+        $result = $conn->query($sqlQuery);
+    
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $event_img_upload_name = $row["img"];
+            }
+        } else {
+            echo "Image error";
+        }
+
         if (isset($_FILES['event_img_'.$event_ID.'_upload'])) {
             $event_img_upload = $_FILES['event_img_'.$event_ID.'_upload'];
+
             $path_parts = pathinfo($event_img_upload["name"]);
-            $extension = $path_parts['extension'];
+            $extension = array_key_exists('extension', $path_parts) ? $path_parts['extension'] : '';
+
             $event_img_upload_name = "event_0".$event_ID.".".$extension;
             $tmp_event_img_upload_name = $event_img_upload['tmp_name'];
             $destination =  '../assets/images/events/' . $event_img_upload_name;

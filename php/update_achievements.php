@@ -1,13 +1,30 @@
 <?php
     require 'connection.php';
 
+    $achievements_img_upload_name;
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $achievements_ID = $_POST['achievements_card_ID'];
 
+        $sqlQuery = "SELECT img FROM achievements_list WHERE achievements_ID=$achievements_ID";
+    
+        $result = $conn->query($sqlQuery);
+    
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $achievements_img_upload_name = $row["img"];
+            }
+        } else {
+            echo "Image error";
+        }
+
         if (isset($_FILES['achievements_img_'.$achievements_ID.'_upload'])) {
+
             $achievements_img_upload = $_FILES['achievements_img_'.$achievements_ID.'_upload'];
+
             $path_parts = pathinfo($achievements_img_upload["name"]);
-            $extension = $path_parts['extension'];
+            $extension = array_key_exists('extension', $path_parts) ? $path_parts['extension'] : '';
+
             $achievements_img_upload_name = "achievements_0".$achievements_ID.".".$extension;
             $tmp_achievements_img_upload_name = $achievements_img_upload['tmp_name'];
             $destination =  '../assets/images/achievements/' . $achievements_img_upload_name;

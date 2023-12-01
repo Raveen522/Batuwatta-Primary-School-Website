@@ -1,13 +1,31 @@
 <?php
     require 'connection.php';
+    
+    $news_img_upload_name;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $news_ID = $_POST['news_card_ID'];
 
+
+        $sqlQuery = "SELECT img FROM news_list WHERE news_ID = $news_ID";
+    
+        $result = $conn->query($sqlQuery);
+    
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $news_img_upload_name = $row["img"];
+            }
+        } else {
+            echo "Image error";
+        }
+
+
         if (isset($_FILES['news_img_'.$news_ID.'_upload'])) {
             $news_img_upload = $_FILES['news_img_'.$news_ID.'_upload'];
+
             $path_parts = pathinfo($news_img_upload["name"]);
-            $extension = $path_parts['extension'];
+            $extension = array_key_exists('extension', $path_parts) ? $path_parts['extension'] : '';
+
             $news_img_upload_name = "news_".$news_ID.".".$extension;
             $tmp_news_img_upload_name = $news_img_upload['tmp_name'];
             $destination =  '../assets/images/news/' . $news_img_upload_name;

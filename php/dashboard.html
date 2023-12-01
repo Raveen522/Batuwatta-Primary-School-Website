@@ -27,7 +27,7 @@
             </div>
             
             <ul>
-                <li><a href="../index.html" target="_blank">Home</a></li>
+                <li><a href="../index.php" target="_blank">Home</a></li>
                 <li><a href="../about.html" target="_blank">About</a></li>
                 <li><a href="https://drive.google.com/drive/folders/1yVyBoLf9xa8T9fjSCx1aiw_CJVjHWmbZ?usp=sharing" target="_blank">Downloads</a></li>
                 <!-- <li><a href="./news.html">News</a></li> -->
@@ -317,11 +317,13 @@
                 xmlhttp.open('POST', '../php/update_generals.php', true);
                 xmlhttp.onload = function() {
                     if (this.status === 200) {
-                        // alert(this.responseText);
+                        alert(this.responseText);
                         document.getElementById("tb_content").innerHTML=this.responseText;
+                        load_generals();
                     }else{
+                        alert(this.responseText);
                         // console.log(this.responseText);
-                        document.getElementById("tb_content").innerHTML=this.responseText;
+                        // document.getElementById("tb_content").innerHTML=this.responseText;
                     }
                 };
                 xmlhttp.send(general_formData);
@@ -351,9 +353,11 @@
                     if (this.status === 200) {
                         // alert(this.responseText);
                         document.getElementById("news_list").innerHTML=this.responseText;
+                        load_news();
                     }else{
+                        alert(this.responseText);
                         // console.log(this.responseText);
-                        document.getElementById("news_list").innerHTML=this.responseText;
+                        // document.getElementById("news_list").innerHTML=this.responseText;
                     }
                 };
                 xmlhttp.send(news_formData);
@@ -383,9 +387,11 @@
                     if (this.status === 200) {
                         // alert(this.responseText);
                         document.getElementById("achievements_list").innerHTML=this.responseText;
+                        load_achievements();
                     }else{
+                        alert(this.responseText);
                         // console.log(this.responseText);
-                        document.getElementById("achievements_list").innerHTML=this.responseText;
+                        // document.getElementById("achievements_list").innerHTML=this.responseText;
                     }
                 };
                 xmlhttp.send(achievements_formData);
@@ -415,18 +421,16 @@
                     if (this.status === 200) {
                         // alert(this.responseText);
                         document.getElementById("event_gallery_list").innerHTML=this.responseText;
+                        load_events();
                     }else{
+                        alert(this.responseText);
                         // console.log(this.responseText);
-                        document.getElementById("event_gallery_list").innerHTML=this.responseText;
+                        // document.getElementById("event_gallery_list").innerHTML=this.responseText;
                     }
                 };
                 xmlhttp.send(events_formData);
             }
             }
-
-
-
-
     </script>
 
 </body>

@@ -108,7 +108,7 @@
                         require './php/connection.php';
 
 
-                        $sqlQuery = "SELECT * FROM news_list";
+                        $sqlQuery = "SELECT * FROM news_list WHERE visibility = 1";
 
                         $result = $conn->query($sqlQuery);
 
@@ -159,7 +159,7 @@
                     <?php
                         require './php/connection.php';
 
-                        $sqlQuery = "SELECT * FROM gallery_list ORDER BY gallery_ID ASC";
+                        $sqlQuery = "SELECT * FROM gallery_list WHERE visibility = 1";
 
                         $result = $conn->query($sqlQuery);
 
@@ -192,7 +192,7 @@
                         require './php/connection.php';
 
 
-                        $sqlQuery = "SELECT * FROM achievements_list ORDER BY achievements_id ASC";
+                        $sqlQuery = "SELECT * FROM achievements_list WHERE visibility = 1";
 
                         $result = $conn->query($sqlQuery);
 
