@@ -175,6 +175,12 @@
     opacity: 0; 
     animation: fade-in-title 1s 1s ease-out forwards; 
 }
+.home-title .hero_logo{
+    width: 150px;
+}
+.home-title #hero_title{
+    color: white;
+}
 
 .home-title h1{
     font-size: 50px;

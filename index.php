@@ -56,8 +56,10 @@
 
             <div class="slider-container">
                 <div class="home-title">
-                    <h1>බටුවත්ත ප්‍රාථමික විද්‍යාලය</h1>
+                    
                     <div class="top-news">
+                        <img src="./assets/images/icons/logo.png" class = "hero_logo">
+                        <h1 id = "hero_title">බටුවත්ත ප්‍රාථමික විද්‍යාලය</h1>
                         <?php
                             require './php/connection.php';
 
@@ -234,7 +236,7 @@
     <footer>
         <div class="footer-elements">
             <div class="contact">
-                <h2>අප සමග සම්බන්ධ වන්න</h2>
+                <h2>සම්බන්ධ වීම සඳහා,</h2>
                 <ul>
                     <li><h3>ලිපිනය</h3> <b>:</b> <p>බප/ මීග/ බටුවත්ත ප්‍රාථමික විද්‍යාලය, <br>බටුවත්ත - රාගම</p></li>
                     <li><h3>දු.ක.</h3> <b>:</b> <p>+94 11-2051403</p></li>
